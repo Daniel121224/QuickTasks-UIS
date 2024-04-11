@@ -17,14 +17,11 @@ public class EntornoTrabajo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idEntorno;
 
-    @Column(name = "nombre_tarea", nullable = false, length = 100)
-    private String nombreTarea;
+    @Column(name = "nombre_entorno", nullable = false, length = 100)
+    private String nombreEntorno;
 
-    @Column(name = "descripcion_tarea", nullable = false, length = 255)
-    private String descripcionTarea;
-
-    @Column(name = "clasificacion_tarea", nullable = false, length = 50)
-    private String clasificacionTarea;
+    @Column(name = "cant_participantes", nullable = false)
+    private int cantParticipantes;
 
     @ManyToOne
     @JoinColumn(name = "idEquipo", referencedColumnName = "idEquipo")
@@ -38,28 +35,20 @@ public class EntornoTrabajo {
         this.idEntorno = idEntorno;
     }
 
-    public String getNombreTarea() {
-        return nombreTarea;
+    public String getNombreEntorno() {
+        return nombreEntorno;
     }
 
-    public void setNombreTarea(String nombreTarea) {
-        this.nombreTarea = nombreTarea;
+    public void setNombreEntorno(String nombreEntorno) {
+        this.nombreEntorno = nombreEntorno;
     }
 
-    public String getDescripcionTarea() {
-        return descripcionTarea;
+    public int getCantParticipantes() {
+        return cantParticipantes;
     }
 
-    public void setDescripcionTarea(String descripcionTarea) {
-        this.descripcionTarea = descripcionTarea;
-    }
-
-    public String getClasificacionTarea() {
-        return clasificacionTarea;
-    }
-
-    public void setClasificacionTarea(String clasificacionTarea) {
-        this.clasificacionTarea = clasificacionTarea;
+    public void setCantParticipantes(int cantParticipantes) {
+        this.cantParticipantes = cantParticipantes;
     }
 
     public Equipo getEquipo() {
