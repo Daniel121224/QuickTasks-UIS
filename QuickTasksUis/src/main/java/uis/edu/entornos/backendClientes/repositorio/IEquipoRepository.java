@@ -4,10 +4,13 @@
  */
 package uis.edu.entornos.backendClientes.repositorio;
 
+import org.springframework.data.jpa.repository.JpaRepository;
+import uis.edu.entornos.backendClientes.modelo.Equipo;
+
 /**
  *
  * @author roble
  */
-public interface IEquipoRepository {
+public interface IEquipoRepository extends JpaRepository<Equipo, Integer>{
     
 }

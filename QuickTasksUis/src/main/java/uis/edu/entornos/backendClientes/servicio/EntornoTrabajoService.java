@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import uis.edu.entornos.backendClientes.modelo.EntornoTrabajo;
 import uis.edu.entornos.backendClientes.repositorio.IEntornoTrabajoRepository;
@@ -16,6 +17,7 @@ import uis.edu.entornos.backendClientes.repositorio.IEntornoTrabajoRepository;
  *
  * @author roble
  */
+@Service
 public class EntornoTrabajoService implements IEntornoTrabajoService{
 
     @Autowired

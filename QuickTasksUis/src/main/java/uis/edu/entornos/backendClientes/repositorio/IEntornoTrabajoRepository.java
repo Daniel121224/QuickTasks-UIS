@@ -11,6 +11,6 @@ import uis.edu.entornos.backendClientes.modelo.EntornoTrabajo;
  *
  * @author roble
  */
-public interface IEntornoTrabajo extends JpaRepository<EntornoTrabajo, Integer>{
+public interface IEntornoTrabajoRepository extends JpaRepository<EntornoTrabajo, Integer>{
     
 }

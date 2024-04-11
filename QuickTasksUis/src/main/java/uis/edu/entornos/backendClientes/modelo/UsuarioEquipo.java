@@ -5,15 +5,9 @@ import javax.persistence.Table;
 import javax.persistence.Id;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
-import javax.persistence.Column;
-import javax.persistence.ManyToMany;
-import javax.persistence.JoinTable;
+import javax.persistence.ManyToOne;
 import javax.persistence.JoinColumn;
-import java.util.Set;
-/**
- *
- *
- */
+
 @Entity
 @Table(name = "usuario_equipo")
 public class UsuarioEquipo {
@@ -22,39 +16,35 @@ public class UsuarioEquipo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @ManyToMany
-    @JoinTable(name = "usuario_equipo",
-               joinColumns = @JoinColumn(name = "idUsuario"),
-               inverseJoinColumns = @JoinColumn(name = "idEquipo"))
-    private Set<Usuario> usuarios;
+    @ManyToOne
+    @JoinColumn(name = "idUsuario")
+    private Usuario usuario;
 
-    @ManyToMany
-    @JoinTable(name = "usuario_equipo",
-               joinColumns = @JoinColumn(name = "idEquipo"),
-               inverseJoinColumns = @JoinColumn(name = "idUsuario"))
-    private Set<Equipo> equipos;
+    @ManyToOne
+    @JoinColumn(name = "idEquipo")
+    private Equipo equipo;
 
-    public Integer getId() {
+    public Integer getIdUsuarioEquipo() {
         return id;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setIdUsuarioEquipo(Integer idUsuarioEquipo) {
+        this.id = idUsuarioEquipo;
     }
 
-    public Set<Usuario> getUsuarios() {
-        return usuarios;
+    public Usuario getUsuario() {
+        return usuario;
     }
 
-    public void setUsuarios(Set<Usuario> usuarios) {
-        this.usuarios = usuarios;
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 
-    public Set<Equipo> getEquipos() {
-        return equipos;
+    public Equipo getEquipo() {
+        return equipo;
     }
 
-    public void setEquipos(Set<Equipo> equipos) {
-        this.equipos = equipos;
+    public void setEquipo(Equipo equipo) {
+        this.equipo = equipo;
     }
 }

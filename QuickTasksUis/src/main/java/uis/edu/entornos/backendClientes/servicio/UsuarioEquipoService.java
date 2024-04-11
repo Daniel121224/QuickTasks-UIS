@@ -6,6 +6,7 @@ package uis.edu.entornos.backendClientes.servicio;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import uis.edu.entornos.backendClientes.modelo.UsuarioEquipo;
 import uis.edu.entornos.backendClientes.repositorio.IUsuarioEquipoRepository;
@@ -13,6 +14,7 @@ import uis.edu.entornos.backendClientes.repositorio.IUsuarioEquipoRepository;
  *
  * @author roble
  */
+@Service
 public class UsuarioEquipoService implements IUsuarioEquipoService{
 
     @Autowired
