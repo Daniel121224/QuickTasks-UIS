@@ -10,16 +10,29 @@ Iniciar Sesión solicitando el nombre del usuario y su clave
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="css/login.css" rel="stylesheet" type="text/css"/>
+    <link href="css/style.css" rel="stylesheet" type="text/css"/>
     <title>Inicio de Sesión en QuickTasksUIS</title>
+    <style>
+        html, body{
+            border: 5px solid #21a649;
+            height: 100%;
+            margin: 0; 
+            padding: 0;
+            background: linear-gradient(#ffffff, #71e977);
+            background-repeat: no-repeat;
+            background-size: 130%;
+            background-position: center;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <div class="row">
-            <div class="col s12 m6">
+            <div class="col s12 m6 offset-m3">
                 <div class="card">  
                     <form action="" onsubmit="" method="POST">
                         <div class="card-content center">
-                            <img src="img/MisionTIC-UIS.png" alt="" />
+                            <img src="img/logo.png" alt="" style="width: 200px; height: auto;" />
                             <span class="card-title">INICIAR SESIÓN</span>
                             <div class="row">
                                 <div class="input-field col s12 m12">
@@ -37,10 +50,10 @@ Iniciar Sesión solicitando el nombre del usuario y su clave
                         <div class="card-action center">
                             <div class="row">
                                 <div class="col s12 m6">
-                                    <button type="button" class="btn btn-large" onclick="validarLogin()">
+                                    <button type="button" class="btn btn-sucess" onclick="validarLogin()">
                                         Ingresar<i class="material-icons right">directions_run</i></button>
                                 </div>
-                                <div class="col s12 m6" style="margin-top: 10px">
+                                <div class="col s12 m6" style="margin-top: 0px">
                                     <a class="card-title activator grey-text text-darken-4">REGISTRARSE</a>
                                 </div> 
                             </div>                                                                    
