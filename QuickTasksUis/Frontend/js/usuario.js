@@ -85,3 +85,17 @@ function deleteUsuario() {
         alert('Error al guardar los cambios.');
     };
 }
+
+/*function consultarUsuario() {
+        let idUsuario = document.getElementById('usuario-id').value;
+        let request = sendRequest('api/usuario/' + id, 'GET', '');
+        request.onload = function() {
+            let usuario = JSON.parse(request.responseText);
+            mostrarUsuario(usuario);
+        };
+        request.onerror = function() {
+            alert('Error al consultar el usuario.');
+        };
+}
+*/
+

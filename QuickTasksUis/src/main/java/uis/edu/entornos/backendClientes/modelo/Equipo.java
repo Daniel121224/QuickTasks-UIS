@@ -20,7 +20,12 @@ public class Equipo {
     
     @Column(name = "integrantes", nullable = false, length = 70)
     private String integrantes;
-    
+
+    @Column(name = "metodologia", nullable = false, length = 70)
+    private String metodologia;
+
+    @Column(name = "codigo", nullable = false, length = 70)
+    private String codigo;
     
     public Integer getIdEquipo(){
         return idEquipo;
@@ -44,5 +49,21 @@ public class Equipo {
     
     public void setIntegrantes(String integrantes){
         this.integrantes = integrantes;
+    }
+
+    public String getMetodologia(){
+        return metodologia;
+    }
+
+    public void setMetodologia(String metodologia){
+        this.metodologia = metodologia;
+    }
+
+    public String getCodigo(){
+        return codigo;
+    }
+
+    public void setCodigo(String codigo){
+        this.codigo = codigo;
     }
 }

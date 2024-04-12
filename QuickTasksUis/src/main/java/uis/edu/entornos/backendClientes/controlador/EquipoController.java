@@ -42,13 +42,13 @@ public class EquipoController {
     }
 
     //Crear un equipo
-    @PostMapping("/")
+    @PostMapping("/l")
     public ResponseEntity<Equipo> create(@RequestBody Equipo equipo){
-        return new ResponseEntity<>(equipoService.create(equipo), HttpStatus.CREATED);   
+        return new ResponseEntity<>(equipoService.create(equipo), HttpStatus.CREATED);
     }
 
     //Actualizar equipo
-    @PutMapping("/update")
+    @PutMapping("/l")
     public ResponseEntity<Equipo> update(@RequestBody Equipo equipo){
         return equipoService.findById(equipo.getIdEquipo())
         .map(c -> ResponseEntity.ok(equipoService.update(equipo)))
