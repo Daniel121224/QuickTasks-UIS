@@ -6,10 +6,6 @@ import javax.persistence.Id;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Column;
-/**
- *
- * 
- */
 
 @Entity
 @Table(name = "usuario")

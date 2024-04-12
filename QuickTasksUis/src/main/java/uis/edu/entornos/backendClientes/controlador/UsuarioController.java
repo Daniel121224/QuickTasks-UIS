@@ -12,13 +12,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import uis.edu.entornos.backendClientes.modelo.LoginDto;
 import uis.edu.entornos.backendClientes.modelo.Usuario;
 import uis.edu.entornos.backendClientes.servicio.UsuarioService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-
-
 
 
 @RestController
@@ -44,9 +43,20 @@ public class UsuarioController {
     }
 
     //Crear un usuario
-    @PostMapping("/")
+    @PostMapping("/l")
     public ResponseEntity<Usuario> create(@RequestBody Usuario usuario){
-        return new ResponseEntity<>(usuarioService.create(usuario), HttpStatus.CREATED);   
+    return new ResponseEntity<>(usuarioService.create(usuario), HttpStatus.CREATED);   
+}
+
+    @PostMapping("/loginclient")
+    public int login(@RequestBody LoginDto usuario){
+        int responseLogin = usuarioService.login(usuario);
+        return responseLogin;
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<?> loginCliente(@RequestBody LoginDto usuario){
+        return usuarioService.ingresar(usuario);
     }
 
     //Actualizar usuario

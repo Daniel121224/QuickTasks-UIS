@@ -6,10 +6,7 @@ import javax.persistence.Id;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Column;
-/**
- *
- * @author roble
- */
+
 @Entity
 @Table(name = "equipo")
 public class Equipo {
