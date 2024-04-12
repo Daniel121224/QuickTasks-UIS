@@ -60,7 +60,7 @@ public class UsuarioController {
     }
 
     //Actualizar usuario
-    @PutMapping("/update")
+    @PutMapping("/l")
     public ResponseEntity<Usuario> update(@RequestBody Usuario usuario){
         return usuarioService.findById(usuario.getIdUsuario())
         .map(c -> ResponseEntity.ok(usuarioService.update(usuario)))
