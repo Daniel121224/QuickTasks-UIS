@@ -50,6 +50,31 @@ function loadUsuario(idUsuario) {
     };
 }
 
+function loadUsuarioTable(idUsuario) {
+    let request = sendRequest('api/usuario/' + idUsuario, 'GET', '');
+    let body = document.getElementById('usuarios-body');
+    body.innerHTML = "";
+
+    request.onload = function() {
+        let data = request.response;
+        body.innerHTML += `
+            <tr>
+                <td>${data.documento}</td>
+                <td>${data.nombre} ${data.apellido}</td>
+                <td>${data.correo}</td>
+                <td>
+                    <button type="button" class="btn btn-primary" onclick='window.location = 
+                    "form_usuarios.html?idUsuario=${data.idUsuario}"'>Ver</button>
+                </td>
+            </tr>
+        `;
+    };
+
+    request.onerror = function() {
+        alert("Error al recuperar los datos del usuario.");
+    };
+}
+
 function saveUsuario() {
     let id = document.getElementById('usuario-id').value;
     let documento = document.getElementById('usuario-documento').value;
@@ -86,16 +111,4 @@ function deleteUsuario() {
     };
 }
 
-/*function consultarUsuario() {
-        let idUsuario = document.getElementById('usuario-id').value;
-        let request = sendRequest('api/usuario/' + id, 'GET', '');
-        request.onload = function() {
-            let usuario = JSON.parse(request.responseText);
-            mostrarUsuario(usuario);
-        };
-        request.onerror = function() {
-            alert('Error al consultar el usuario.');
-        };
-}
-*/
 

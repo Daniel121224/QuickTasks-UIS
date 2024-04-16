@@ -44,10 +44,51 @@ function loadEquipo(idEquipo) {
         metodologia.value = data.metodologia;
         codigo.value = data.codigo;
     };
+    data.forEach((element, index) => {
+            table.innerHTML += `
+                <tr>
+                    <th>${element.nombre}</th>
+                    <td>${element.integrantes}</td>
+                    <td>${element.metodologia}</td>
+                    <td>${element.codigo}</td>
+                    <td>
+                        <button type="button" class="btn btn-primary" onclick='window.location = 
+                        "form_equipos.html?idEquipo=${element.idEquipo}"'>Ver</button>
+                    </td>
+                </tr>
+            `;
+        });
     request.onerror = function() {
         alert("Error al recuperar los datos.");
     };
 }
+
+function loadEquipoTable(idEquipo) {
+    let request = sendRequest('api/equipo/' + idEquipo, 'GET', '');
+    let body = document.getElementById('equipos-body');
+    body.innerHTML = "";
+
+    request.onload = function() {
+        let data = request.response;
+        body.innerHTML += `
+            <tr>
+                <td>${data.nombre}</td>
+                <td>${data.integrantes}</td>
+                <td>${data.metodologia}</td>
+                <td>${data.codigo}</td>
+                <td>
+                    <button type="button" class="btn btn-primary" onclick='window.location = 
+                    "form_equipos.html?idEquipo=${data.idEquipo}"'>Ver</button>
+                </td>
+            </tr>
+        `;
+    };
+
+    request.onerror = function() {
+        alert("Error al recuperar los datos del equipo.");
+    };
+}
+
 
 function saveEquipo() {
     let id = document.getElementById('equipo-id').value;
